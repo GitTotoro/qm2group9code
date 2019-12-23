@@ -1,0 +1,6 @@
+import pandas
+data = "./data/wk2/UK Carbon Footprint 2010-16.csv"
+data_path =  pandas.read_csv(data)
+clean=data_path.replace(',', '', regex=True)
+clean = data_path.replace('-', 'NaN', regex=True).astype('float')
+clean.head()
